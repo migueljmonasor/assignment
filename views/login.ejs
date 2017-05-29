@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+
+<h1>Login</h1>
+<form id="login" action="/auth/login" method="post">
+
+<p>
+<label for="username">Email:</label><br />
+<input name="username" />
+</p>
+
+<p>
+<label for="username">Password:</label><br />
+<input type="password" name="password" />
+</p>
+
+<input type="checkbox" name="rememberMe" value="rememberMe">Remember me<br>
+
+<p>
+<input type="submit">
+</p>
+</form>
+

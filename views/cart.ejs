@@ -1,0 +1,51 @@
+<script src="/js/cartSocket.js"></script>
+<script src="/js/modernizr-2.6.2.js"></script>
+<script src="/js/jquery.tablesorter.min.js"></script>
+<% layout('layout') -%>
+
+<h1> <%-cartUser.name %>'s shopping list</h1>
+
+<% if( !cart ) { %>
+Nothing in your cart.
+<% } else { %>
+<table id="shoppingListTable" class="tablesorter">
+  <thead> 
+    <tr> 
+        <th class="sortingHeader">Product</th> 
+        <th class="sortingHeader">Added on</th> 
+        <th class="sortingHeader">Price</th> 
+        <% if( user && user.email==cart.user) { %>
+          <th>Actions</th> 
+        <% } %>
+    </tr> 
+  </thead> 
+  <tbody>
+    <% var entries = cart.entries || [] 
+      for( var i = 0; i < entries.length; i++ ) {
+        var entry = entries[i]
+    %>
+    <tr data-entry="<%-entry.id%>" class="entry">
+    <td><%-entry.name%></td>
+    <td class="dateAdded"><%-entry.dateAdded%></td>
+    <td class="productPrice"><%-formatprice(entry.price)%></td>
+
+    <% if( user && user.email==cart.user) { %>
+    <td class="remove">Remove</td>
+    <% } %>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+<% } %>
+
+<div id="totalLb" class="total">Total: <%-formatprice(cart.total)%></div>
+
+<% if( user && user.email==cart.user) { %>
+  <a href="/account">Buy more</a>
+<% } %>
+
+<form id="cart_form" method="post" action="/api/cart/remove_entry">
+<input type="hidden" id="entry_input" name="entry">
+</form>
+
+<input type="hidden" id="cart_user" value="<%-cart.user %>"/>

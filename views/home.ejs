@@ -1,0 +1,9 @@
+<% layout('layout') -%>
+
+<h1>Home</h1>
+<div>Number of registered users: <%-registeredUsers.length%></div>
+<div>Number of shopping list with at least one item: <%-numShoppingList%></div>
+<div>Total number of items in all shopping lists combined: <%-totalItemsInAllShoppingList%></div>
+<script>
+    $('a[id="home"]').addClass("active");
+</script>

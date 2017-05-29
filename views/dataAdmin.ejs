@@ -1,0 +1,18 @@
+<% layout('layoutAdmin') -%>
+
+<h1>Database Admin</h1>
+This page is used to populate the database with initial products for demo purposes.
+
+<div class="successLabel">
+<% if(status=="updated") { %>
+    Action successfully completed
+<% }  %>
+</div>
+
+<div class="step">Populate products:
+<input type="button" id="updateDataBtn" onclick="populateData()" value="Populate database">
+</div>
+<form id="populate_form" method="post" action="/api/data/populate_db"></form>
+
+<div class="step">Navigate home: <a href="/">Home</a>
+</div>

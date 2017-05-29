@@ -1,0 +1,52 @@
+<% layout('layout') -%>
+
+<h1>Sign up</h1>
+
+<div id="error" class="errorLabel"></div>
+
+<div id="content_register" class="content">
+
+<form id="login" action="/auth/register" method="post">
+
+<p>
+<label for="name">Name:</label><br />
+<input id="name" name="name" />
+</p>
+
+<p>
+<label for="email">Email:</label><br />
+<input id="email" name="email" />
+</p>
+
+<p>
+<label for="password">Password:</label><br />
+<input type="password" id="password" name="password" />
+</p>
+
+<p>
+<label for="repeat">Repeat Password:</label><br />
+<input type="password" id="repeat" name="repeat" />
+</p>
+
+<p>
+<input type="submit">
+</p>
+</form>
+
+</div>
+
+<script>
+$(document).ready(function(){
+   var $form = $('form');
+   $form.submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(response){
+        if (response.ok==true){
+            window.location.href = "/account";
+        }else{
+            $('#error').text('Error: ' + response.why);
+        }
+      },'json');
+      return false;
+   });
+});
+</script>

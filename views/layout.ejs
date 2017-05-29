@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/shopping-cart.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/shopping-cart.js"></script>
+</head>
+<body>
+<img src="images/logo.png" alt="logo" class="logo">
+<nav id="nav-main">
+    <ul>
+        <li><a id="home" href="/">Home</a></li>
+        <li><a id="documentation" href="/doc_introduction">Documentation</a></li>
+        <li><a id="about" href="/about">About</a></li>
+        <% if( typeof user != 'undefined' ) { %>
+        <li class="welcomedText"><div>Welcome <div id="userLb"><%-user.name%></div> </div></li>
+        <li><a id="logout" class="highlightMenu" href="/logout">logout</a></li>
+        <% } else { %>
+        <li><a class="highlightMenu" href="/login">Login</a></li>
+        <li><a class="highlightMenu" href="/signup">Sign up</a></li>
+        <% } %>
+    </ul>
+</nav>
+<div id="nav-trigger">
+    <span>Menu</span>
+</div>
+<nav id="nav-mobile"></nav>
+<%- body %>
+</body>
+</html>
+

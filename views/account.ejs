@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+
+<h1>Products</h1>
+
+<div>Total products: <%=products ? products.length : 0%></div>
+
+<% if( this.products ) { %>
+There are no products available yet.
+<% } else { %>
+<%  
+   for( var i = 0; i < products.length; i++ ) {
+     var product = products[i]
+  %>
+  <div id="<%-product.code%>" class="buy">Buy <%-product.name%> (<%-formatprice(product.price)%>)</div>
+  <% } %>
+<% } %>
+
+<form id="prod_form" method="post" action="/api/cart/add_entry">
+<input type="hidden" id="code_input" name="code">
+</form>
+
+<a href="/cart">Your cart (<%=cart ? cart.entries.length : 0%> products)</a>
