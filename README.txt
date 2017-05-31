@@ -1,4 +1,3 @@
-
 GameHouse Shopping List Assignment:
 
 The seneca-cart plugin provides an easy interface for performing cart-
@@ -7,35 +6,30 @@ like "/api/cart/add_entry" and "/api/cart/remove_entry", you can easily
 manipulate the cart back-end without tightly coupled logic. All of the 
 configuration for the cart plugin lies in app.js.
 
-The seneca-engage plugin can also be found in the app.js file. This plugin
-handles the persistence of user sessions, saving the user's shopping cart
-for later use. The handlecart() function takes care of getting the cart from
-engagement, and setting the cart after any changes. 
-
-After the plugin is configured, the express paths are then set to render 
-the correct ejs templates with appropriate local variables from the cart.
-Notice how every path retrieves the cart from engage through the handlecart()
-function before rendering the page.
-
-The cart-related actions like adding or removing items are handled on the 
-pages (index, cart, and checkout) through hidden forms that post to the cart 
-api. jQuery is used to pass the id's of DOM elements to the api calls, thus
-connecting our front-end to the seneca-cart plugin.
-
-
 The documentation of the project can be found at http://35.157.199.107/doc_introduction
 
-Install:
-npm install
+PREREQUISITES:
 
-Run with:
+Install MongoDB by following these instructions:
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+    sudo service mongod start
 
-node app.js -p 3000
+Install npm:
+    sudo apt install npm
 
-and then visit:
-http://localhost:3000
+DEPLOYMENT:
+Download the code from git repository, install dependencies, run the tests and start the application:
 
-Access the database admin panel on:
-http://localhost:3000/dataAdmin
+    git clone https://github.com/migueljmonasor/assignment.git
+    cd assignment
+    npm install
+    npm test test/cart.test.js
+    nodejs app.js -p PORT_NUMBER
 
+    and then visit: http://localhost:PORT_NUMBER
 
+Database population:
+    After deployment the following link allows populating the database with initial products. It also removes existing shopping lists: http://localhost:80/dataAdmin
