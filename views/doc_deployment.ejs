@@ -38,14 +38,14 @@ After deployment the following link allows populating the database with initial 
 <p>Install <a href="https://www.npmjs.com/package/forever" target="_blank" >forever plugin</a>. Forever has functions to create applications that are always running—"forever" running.</p>
 <p class="subitem">sudo npm -g install forever</p>
 <p>After this the application could be started with the following command and it would be automatically restarted upon errors:</p>
-<p class="subitem">forever start nodejs app.js</p>
+<p class="subitem">forever start app.js</p>
 </div>
 
 <div class="text-content">
 <p>Redirect default port 3000 to port 80 and make the application autostart upon server reboot:</p>
 <p>Edit /etc/rc.local file by adding the following lines:</p>
 <p class="subitem">iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000</p>
-<p class="subitem">forever start nodejs app.js</p>
+<p class="subitem">forever start app.js</p>
 </div>
 
 <script>
