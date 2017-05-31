@@ -1,6 +1,59 @@
 <% layout('doc_layout') -%>
 
-<h1>Checklist</h1>
+<h2>Requirements' checklist</h2>
+
+<div class="text-content">
+<p>• Your code and any program or technology required should run under linux (ubuntu 16.04). <span class="done">Seneca over Node.js with MongoDB. </span></p>
+<p>• Webapp must contain a landing page that: </p>
+<p class="subitem">◦ Shows the number of users registered: <span class="done">DONE</span></p>
+<p class="subitem">◦ Shows the number of shopping lists with at least 1 item in them: <span class="done">DONE</span></p>
+<p class="subitem">◦ Shows the total number of items in all shopping lists combined: <span class="done">DONE</span></p>
+<p class="subitem">◦ Anybody can access this page (no login required) <span class="done">DONE</span></p>
+<p class="subitem">◦ Should be prepared to receive hundreds or even thousands of simultaneous visits, thus, it is fine if the data is not 100% accurate on this particular page. <span class="done">MongoDB</span></p>
+<p class="subitem">◦ This page will be accessed at http://server-ip/. <span class="done"> DONE. Available at <a href="http://35.157.199.107" target="_blank" >http://35.157.199.107</a> </span></p>
+<p>• A top navigation bar should be displayed in ALL pages and must contain: </p>
+<p class="subitem">◦ application name/logo <span class="done">DONE</span></p>
+<p class="subitem">◦ a link to the dashboard/landing page <span class="done">DONE (<a href="http://35.157.199.107" target="_blank" >http://35.157.199.107</a>)</span></p>
+<p class="subitem">◦ a link to the documentation page <span class="done">DONE</span></p>
+<p class="subitem">◦ a link to the about page <span class="done">DONE</span> </p>
+<p class="subitem">◦ a link to the login page/dialog (when not logged) <span class="done">DONE</span></p>
+<p class="subitem">◦ a link to the user's shopping list (when logged) <span class="done">DONE</span></p>
+<p class="subitem">◦ a logout button (when logged) <span class="done">DONE</span></p>
+<p>• The login page or dialog must: </p>
+<p class="subitem">◦ Have a form asking e-mail and password <span class="done">DONE</span></p>
+<p class="subitem">◦ Have a "remember me" button which, if clicked, should keep the user logged for 2 weeks <span class="done">DONE. ‘seneca-login’ cookie will expire after two weeks.</span></p>
+<p class="subitem">◦ Have a login button that redirects the browser to the shopping list when login succeeds <span class="done">DONE</span></p>
+<p class="subitem">◦ Have a "Sign up!" link <span class="done">DONE</span></p>
+<p>• Signup page or dialog must: <a href="http://35.157.199.107/signup" target="_blank" >http://35.157.199.107/signup</a> </p>
+<p class="subitem">◦ Ask for email address, display name and password (all 3 mandatory) <span class="done">DONE</span></p>
+<p class="subitem">◦ Create a new user. <span class="done">DONE</span></p>
+<p class="subitem">◦ Log in the user and redirect the browser to the shopping list (same flow as login)<span class="done"> DONE</span></p>
+<p>• Shopping list page must:  </p>
+<p class="subitem">◦ Be displayed right after the user logs in or signs up <span class="done">Initially a page displaying the available products is displayed (<a href="http://35.157.199.107/account" target="_blank" >http://35.157.199.107/account</a>). From this page the shopping list is automatically shown after adding a product or via link (<a href="http://35.157.199.107/cart" target="_blank" >http://35.157.199.107/cart</a>)</span></p>
+<p class="subitem">◦ Have a title saying “DISPLAY_NAME's shopping list” <span class="done">DONE</span></p>
+<p class="subitem">◦ Must allow adding or removing items to the list by its owner (and only by its owner) <span class="done">DONE</span></p>
+<p class="subitem">◦ Display all items in the shopping list <span class="done">DONE</span></p>
+<p class="subitem">◦ Allow sorting items alphabetically or by creation time <span class="done">DONE (sorting implemented with tablesorter)</span></p>
+<p class="subitem">◦ Each shopping list should have a public URL that anybody can access to see the shopping list (even without being logged in) <span class="done">DONE (http://35.157.199.107/cart?id=EMAIL OF THE LIST OWNER</span></p>
+<p class="subitem">◦ Every user in the system will be the owner of one, and only one, shopping list, and a shopping list will only have one owner (1:1) <span class="done">DONE</span></p>
+<p class="subitem">◦ Items in the shopping list will contain at most 100 characters. <span class="done">At the moment an initial list of items is populated via <a href="http://35.157.199.107/dataAdmin" target="_blank" >http://35.157.199.107/dataAdmin</a>. A future improvement would consider adding new custom items. That functionality should consider such restriction on the number of characters.</span></p>
+<p class="subitem">◦ Must not display add form or remove buttons when the user viewing the page is not the owner. <span class="done">DONE</span></p>
+<p>• Real-time updates <span class="done"> Implemented using <a href="https://www.npmjs.com/package/websocket.io" target="_blank" > websocket.io</a></span></p>
+<p class="subitem">◦ All modifications that a user does on a shopping list should directly propagate through all browsers that are displaying that shopping list without requiring a manual refresh. <span class="done">DONE</span></p>
+<p class="subitem">◦ All opened pages should instantly show/propagate the additions/removals, even if editing same page in multiple browsers/tabs. <span class="done">DONE</span></p>
+<p>• The data on the server must be persistent  <span class="done">Data persisted in MongoDB</span></p>
+<p class="subitem">◦ The data must not be lost if the server or the application is restarted </p>
+<p>• Documentation page <a href="http://35.157.199.107/doc_introduction" target="_blank" >http://35.157.199.107/doc_introduction</a></p>
+<p class="subitem">◦ All documentation for your project should be contained here </p>
+<p class="subitem">◦ You can use txt, pdf, html, … </p>
+<p class="subitem">◦ You can just display one big page or use multiple pages </p>
+<p class="subitem">◦ If multiple files are provided as documentation, they should all be linked from here, anything outside of this section won't be read at all. </p>
+<p class="subitem">◦ Documentation must be written in English </p>
+<p>• About page <a href="http://35.157.199.107/about" target="_blank" >http://35.157.199.107/about</a></p>
+<p class="subitem">◦ The page must contain your name in it. <span class="done">DONE</spam></p>
+<p>• Provide a deployment script that sets up the server and deploys your application or artifacts to a remote (clean) machine. <span class="done">DONE. Explained in <a href="http://35.157.199.107/doc_deployment" target="_blank" >http://35.157.199.107/doc_deployment</a></span> </p>
+</div>
+
 
 <script>
     $('a[id="checklist"]').addClass("active");

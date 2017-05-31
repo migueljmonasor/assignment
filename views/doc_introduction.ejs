@@ -1,6 +1,39 @@
 <% layout('doc_layout') -%>
 
-<h1>Introduction</h1>
+<h2>Introduction</h2>
+<p>The source code generated for this application is available at <a href="https://github.com/migueljmonasor/assignment" target="_blank" >Github</a></p>
+<p>The architecture is based on Seneca foundations. Seneca data entities are used making it trivial to change from the current MongoDB to any other common SQL or noSQL known database system.</p>
+<p>The orientation to microservices allow the system to scale easily. Each microservice handles a small piece of functionality for the application, and multiple microservices connected together in a network constitutes a complete application.</p>
+<p>Technologies used:</p>
+<div class="text-content">
+Back end: </br>
+<p><a href="https://nodejs.org" target="_blank" >Node.js</a></p>
+<p><a href="http://senecajs.org" target="_blank" >Seneca</a></p>
+<p><a href="https://expressjs.com/" target="_blank" >Express</a></p>
+</div>
+
+<div class="text-content">
+Front end: </br>
+<p><a href="https://jquery.com" target="_blank" >JQuery</a></p>
+</div>
+
+<div class="text-content">
+Source Control: </br>
+<p><a href="https://github.com" target="_blank" >Github</a></p>
+</div>
+
+<div class="text-content">
+Data store: </br>
+<p><a href="https://www.mongodb.com/" target="_blank" >MongoDB</a></p>
+</div>
+
+<div class="text-content">
+Testing: </br>
+<p><a href="https://mochajs.org" target="_blank" >Mocha</a></p>
+<p><a href="http://chaijs.com" target="_blank" >Chai Assertion Library</a></p>
+<p><a href="https://www.npmjs.com/package/istanbul" target="_blank" >Istanbul</a>: The tests coverage report generated for this application is available <a href="http://35.157.199.107/coverage/lcov-report/index.html" target="_blank" >here</a></p>
+</div>
+
 <script>
     $('a[id="introduction"]').addClass("active");
     $('a[id="documentation"]').addClass("active");

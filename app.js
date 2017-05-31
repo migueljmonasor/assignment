@@ -143,8 +143,8 @@ app.get('/doc_introduction', function(req,res,next){
     res.render('doc_introduction.ejs',{locals:{user:req.seneca.user}})
 })
 
-app.get('/doc_instructions', function(req,res,next){
-    res.render('doc_instructions.ejs',{locals:{user:req.seneca.user}})
+app.get('/doc_improvements', function(req,res,next){
+    res.render('doc_improvements.ejs',{locals:{user:req.seneca.user}})
 })
 
 app.get('/doc_deployment', function(req,res,next){

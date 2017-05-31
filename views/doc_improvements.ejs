@@ -1,0 +1,31 @@
+<% layout('doc_layout') -%>
+
+<h2>Improvements</h2>
+<p>A number of improvements would be required to make the system ready for a production environment:</p>
+<div class="text-content">
+    <p>Security:</p>
+    <p class="subitem">Password encryption</p>
+    <p class="subitem">Use Catpchas for Signing up</p>
+    <p class="subitem">Review <a href="https://expressjs.com/en/advanced/best-practice-security.html" target="_blank" >Production best practices for Express</a></p>
+    <p class="subitem">Ethical hacking scan, prevention of cross-site scripting, DoS attacks, ...</p>
+</div>
+<div class="text-content">
+    <p>Accessibility:</p>
+    <p class="subitem">Test accessibility, add ARIA accessibility attributes, test screen readers, test across different browsers.</p>
+</div>
+<div class="text-content">
+    <p>Testing:</p>
+    <p class="subitem">Unit tests: Improve unit tests coverage. A report of the test coverage is presented <a href="http://35.157.199.107/coverage/lcov-report/index.html" target="_blank" >here</a></p>
+    <p class="subitem">Functional testing: Implement with Selenium using <a href="http://webdriver.io/" target="_blank" >WebdriverIO</a></p>
+	<p class="subitem">Load testing: HTTP and WebSockets load testing with <a href="https://artillery.io/" target="_blank" >Artillery</a> </p>
+</div>
+<div class="text-content">
+    <p>Scalability:</p>
+    <p class="subitem">Vertical: Take advantage of the current architecture developed in Seneca to divide into independent microservices</p>
+	<p class="subitem">Horizontal: Investigate the use of <a href="http://reactivex.io" target="_blank" >ReactiveX </a>to support higher loads minimizing resources</p>
+</div>
+
+<script>
+    $('a[id="improvements"]').addClass("active");
+    $('a[id="documentation"]').addClass("active");
+</script>

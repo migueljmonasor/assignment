@@ -1,16 +1,16 @@
 <% layout('layout') -%>
 
-<div>Documentation</div>
-<div id="block_container">
+<h1>Documentation</h1>
+<div class="block_container">
     <div class="left">
         <ul class="menu">
             <li><a id="introduction" href="/doc_introduction">Introduction</a></li>
-            <li><a id="instructions" href="/doc_instructions">Instructions</a></li>
             <li><a id="deployment" href="/doc_deployment">Deployment</a></li>
             <li><a id="checklist" href="/doc_checklist">Requirements checklist</a></li>
+            <li><a id="improvements" href="/doc_improvements">Improvements</a></li>
         </ul>
     </div>
-    <div class="right">
+    <div class="right mainDoc">
         <%- body %>
     </div>
 </div>

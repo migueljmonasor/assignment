@@ -23,21 +23,19 @@ api. jQuery is used to pass the id's of DOM elements to the api calls, thus
 connecting our front-end to the seneca-cart plugin.
 
 
-To read more about the seneca-engage plugin, take a look at 
-https://github.com/rjrodger/seneca-engage
+The documentation of the project can be found at http://35.157.199.107/doc_introduction
 
 Install:
 npm install
 
 Run with:
 
-node app.js -p 80
+node app.js -p 3000
 
 and then visit:
-http://localhost:80
-
+http://localhost:3000
 
 Access the database admin panel on:
-http://localhost:80/dataAdmin
+http://localhost:3000/dataAdmin
 
 

@@ -1,6 +1,53 @@
 <% layout('doc_layout') -%>
 
-<h1>Deployment</h1>
+<h2>Deployment</h2>
+<p>The following instructions asume an installation under Ubuntu 16.04.</p>
+<p>Prerequisites:</p>
+<div class="text-content">
+<p>Install MongoDB by following these <a href="https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/" target="_blank" >instructions</a>:</p>
+<p class="subitem">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927</p>
+<p class="subitem">echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | </br>sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list</p>
+<p class="subitem">sudo apt-get update</p>
+<p class="subitem">sudo apt-get install -y mongodb-org</p>
+<p class="subitem">sudo service mongod start</p>
+</div>
+
+<div class="text-content">
+<p>Install npm: </p>
+<p class="subitem">sudo apt install npm</p>
+</div>
+
+<p>Deployment:</p>
+<div class="text-content">
+<p>Download the code from git repository, install dependencies, run the tests and start the application:</p>
+<p class="subitem">git clone https://github.com/migueljmonasor/assignment.git</p>
+<p class="subitem">cd assignment</p>
+<p class="subitem">npm install</p>
+<p class="subitem">npm test test/cart.test.js</p>
+<p class="subitem">nodejs app.js -p PORT_NUMBER</p>
+</div>
+
+<p>Database population:</p>
+<div class="text-content">
+After deployment the following link allows populating the database with initial products. It also removes existing shopping lists:</br>
+<a href="http://35.157.199.107/dataAdmin" target="_blank" >dataAdmin</a>
+</div>
+
+<p>Optional settings:</p>
+<div class="text-content">
+<p>Install <a href="https://www.npmjs.com/package/forever" target="_blank" >forever plugin</a>. Forever has functions to create applications that are always running—"forever" running.</p>
+<p class="subitem">sudo npm -g install forever</p>
+<p>After this the application could be started with the following command and it would be automatically restarted upon errors:</p>
+<p class="subitem">forever start nodejs app.js</p>
+</div>
+
+<div class="text-content">
+<p>Redirect default port 3000 to port 80 and make the application autostart upon server reboot:</p>
+<p>Edit /etc/rc.local file by adding the following lines:</p>
+<p class="subitem">iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000</p>
+<p class="subitem">forever start nodejs app.js</p>
+</div>
+
 <script>
     $('a[id="deployment"]').addClass("active");
     $('a[id="documentation"]').addClass("active");
