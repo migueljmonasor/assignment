@@ -32,7 +32,9 @@ module.exports = function cart( options ) {
     cart.entries = []
     cart.total = 0
     cart.status = 'open'
-    cart.user=args.user.email
+    if (cart.user){
+      cart.user=args.user.email
+    }
 /*
     _.each( seneca.util.clean(_.omit(args, ['role','cmd','cart','id','created','modified','entries','total','status'])), function(v,k){
       cart[k]=v
